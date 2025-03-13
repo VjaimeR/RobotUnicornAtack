@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -26,6 +27,14 @@ public class PlayerCollision : MonoBehaviour
           {
              onPlayerLose?.Invoke();
           }
+        }
+    }
+
+    private void OriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DeadZone"))
+        {
+             onPlayerLose?.Invoke();
         }
     }
 }
