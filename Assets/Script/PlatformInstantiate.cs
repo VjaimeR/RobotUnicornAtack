@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformsInstantiate : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> platforms;
+    private List <GameObject> platforms;
     [SerializeField]   
     private float distanceBetweenPlatforms = 2f;
     [SerializeField]
