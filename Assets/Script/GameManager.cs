@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public void FinishGame()
     {
         onFinishGame?.Invoke();
-        Invoke("StartGame", finalSecondsTorestart);
+        Invoke("Start", finalSecondsTorestart);
         Invoke("RestartGame", finalSecondsTorestart);
     }
     private void RestartGame()
