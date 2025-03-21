@@ -18,6 +18,9 @@ public class Jump : MonoBehaviour
     private float jumpTimeCounter;
     private bool buttonPressed;
     private bool canJump = true;
+
+    [SerializeField]
+    private AudioClip jumpClip;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -49,6 +52,7 @@ public class Jump : MonoBehaviour
             rb.linearVelocity = Vector3.up * jumpForce;
             isGrounded = false;
         }
+        EffectsManager.instance.EjectSound(jumpClip);
     }
 
 
