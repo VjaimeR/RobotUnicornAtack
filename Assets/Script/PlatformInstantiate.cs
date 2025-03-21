@@ -7,39 +7,56 @@ public class PlatformsInstantiate : MonoBehaviour
     [SerializeField]
     private List <GameObject> platforms;
     [SerializeField]   
-    private float distanceBetweenPlatforms = 2f;
+    private float distanceBetweenPlatforms = 0f;
     [SerializeField]
-    private int initialPlatforms = 10;
+    private int initialPlatforms = 10; 
     private float offsetPositionX = 0f;
-
+    [SerializeField]
+    private int specificPlatform1Index = 0;
+    [SerializeField]
+    private int specificPlatform2Index = 1;
 
     private void Start()
     {
         offsetPositionX = 0;
-        InstantiatePlatforms(initialPlatforms);
+        InstantiateInitialPlatforms();
+        InstantiateRandomPlatforms(initialPlatforms - 2);
     }
+    private void InstantiateInitialPlatforms()
+    {
+        if (specificPlatform1Index < 0 || specificPlatform1Index >= platforms.Count ||
+            specificPlatform2Index < 0 || specificPlatform2Index >= platforms.Count)
+        {
+            Debug.LogError("Índices de plataforma específica fuera de rango.");
+            return;
+        }
 
-
-    public void InstantiatePlatforms(int amount)
+        InstantiatePlatform(platforms[specificPlatform1Index]);
+        InstantiatePlatform(platforms[specificPlatform2Index]);
+    }
+    private void InstantiateRandomPlatforms(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
             int randomIndex = Random.Range(0, platforms.Count);
-            if (offsetPositionX != 0)
-            {
-                offsetPositionX += (float)(platforms[randomIndex].GetComponent<BoxCollider>().size.x * 0.5);
-            }
-            GameObject platform = Instantiate(platforms[randomIndex], Vector3.zero, Quaternion.identity);
-            offsetPositionX += distanceBetweenPlatforms + platform.GetComponent<BoxCollider>().size.x * 0.5f;
-            platform.transform.SetParent(transform);
-            platform.transform.localPosition = new Vector3(offsetPositionX, 0,0);
+            InstantiatePlatform(platforms[randomIndex]);
         }
     }
 
+    void InstantiatePlatform(GameObject platformPrefab)
+    {
+        if (offsetPositionX != 0)
+        {
+            offsetPositionX += (float)(platformPrefab.GetComponent<BoxCollider>().size.x * 0.5);
+        }
+        GameObject platform = Instantiate(platformPrefab, Vector3.zero, Quaternion.identity);
+        offsetPositionX += distanceBetweenPlatforms + platformPrefab.GetComponent<BoxCollider>().size.x * 0.5f;
+        platform.transform.SetParent(transform);
+        platform.transform.localPosition = new Vector3(offsetPositionX, 0, 0);
+    }
 
-
-
-    public void Restart()
+    // Método para reiniciar la escena
+     void Restart()
     {
         foreach (Transform child in transform)
         {
@@ -47,5 +64,38 @@ public class PlatformsInstantiate : MonoBehaviour
         }
         Start();
     }
+    /*  private void Start()
+  {
+      offsetPositionX = 0;
+      InstantiatePlatforms(initialPlatforms);
+  }
+
+
+  public void InstantiatePlatforms(int amount)
+  {
+      for (int i = 0; i < amount; i++)
+      {
+          int randomIndex = Random.Range(0, platforms.Count);
+          if (offsetPositionX != 0)
+          {
+              offsetPositionX += (float)(platforms[randomIndex].GetComponent<BoxCollider>().size.x * 0.5);
+          }
+          GameObject platform = Instantiate(platforms[randomIndex], Vector3.zero, Quaternion.identity);
+          offsetPositionX += distanceBetweenPlatforms + platform.GetComponent<BoxCollider>().size.x * 0.5f;
+          platform.transform.SetParent(transform);
+          platform.transform.localPosition = new Vector3(offsetPositionX, 0,0);
+      }
+  }
+
+  public void Restart()
+  {
+      foreach (Transform child in transform)
+      {
+          Destroy(child.gameObject);
+      }
+      Start();
+  }
+
+  */
 }
 

@@ -2714,6 +2714,8 @@ MonoBehaviour:
   - {fileID: 765138119783646659, guid: 9f22d13dce5c7e841977b13c952e61c2, type: 3}
   distanceBetweenPlatforms: 0
   initialPlatforms: 10
+  specificPlatform1Index: 0
+  specificPlatform2Index: 0
 --- !u!1 &1710474441
 GameObject:
   m_ObjectHideFlags: 0
