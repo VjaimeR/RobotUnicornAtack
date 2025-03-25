@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class Jump : MonoBehaviour
@@ -11,6 +12,8 @@ public class Jump : MonoBehaviour
     private float jumpBoost = 0.5f;
     [SerializeField]
     private int maxJumps = 2;
+    [SerializeField]
+    private UnityEvent onJump;
     private int jumps;
     private Rigidbody rb;
     private bool isGrounded;
@@ -18,9 +21,10 @@ public class Jump : MonoBehaviour
     private float jumpTimeCounter;
     private bool buttonPressed;
     private bool canJump = true;
-
     [SerializeField]
-    private AudioClip jumpClip;
+private UnityEvent onLand;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,16 +47,18 @@ public class Jump : MonoBehaviour
         {
             return;
         }
+       
         buttonPressed = true;
         if(isGrounded || jumps > 0)
         {
+            onJump?.Invoke();
             jumps --;
             isJumping = true;
             jumpTimeCounter = maxJumpTime;
             rb.linearVelocity = Vector3.up * jumpForce;
-            isGrounded = false;
+            isGrounded = false;   
+            onLand?.Invoke();        
         }
-        EffectsManager.instance.EjectSound(jumpClip);
     }
 
 
@@ -93,6 +99,7 @@ public class Jump : MonoBehaviour
         {
             RestartJumps();
             isGrounded = true;
+            
         }        
     }
 }
