@@ -1,16 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class PlatformsTrigger : MonoBehaviour
 {
-[SerializeField]
-private UnityEvent onPlatformsTriggered;
+   [SerializeField]
+   private UnityEvent onPlatformTriggered;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("DeadZone"))
         {
-         Destroy(other.gameObject);
-        onPlatformsTriggered?.Invoke();
-        } 
+            other.gameObject.SetActive(false);
+            onPlatformTriggered?.Invoke();
+        }
     }
 }
+
