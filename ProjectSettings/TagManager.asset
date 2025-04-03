@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - DeadZone
   - PlatformStart
+  - Coin
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
