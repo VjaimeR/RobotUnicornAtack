@@ -40,7 +40,10 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
        onLoseGame?.Invoke();
-       Invoke("ShowGameOverScreen", secondsToShowGameOverScreen);
+        //Activa el Low Pitch
+        SoundManager.instance.LowerMusicPitch(0.5f, 2f);
+
+        Invoke("ShowGameOverScreen", secondsToShowGameOverScreen);
     }
     private void ShowGameOverScreen()
     {

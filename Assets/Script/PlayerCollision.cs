@@ -33,8 +33,6 @@ public class PlayerCollision : MonoBehaviour
           {
              onCollisionDie?.Invoke(transform);
              onPlayerLose?.Invoke();
-             //Activa el Low Pitch
-             SoundManager.instance.LowerMusicPitch(0.5f, 2f);
             }
         }
     }
