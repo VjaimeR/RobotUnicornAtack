@@ -23,8 +23,6 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
-
         audioDictionary = new Dictionary<string, AudioClip>();
         foreach (string key in audioList)
         {
@@ -97,5 +95,31 @@ public class SoundManager : MonoBehaviour
     {
 
         masterMixer.SetFloat("masterVolume", volume);
+    }
+
+    public void LowerMusicPitch(float targetPitch, float duration)
+    {
+        StartCoroutine(LerpMusicPitch(targetPitch, duration));
+    }
+
+    private IEnumerator LerpMusicPitch(float targetPitch, float duration)
+    {
+        float startPitch = musicS.pitch;
+        float time = 5f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = time / duration;
+            musicS.pitch = Mathf.Lerp(startPitch, targetPitch, t);
+            yield return null;
+        }
+
+        musicS.pitch = targetPitch;
+    }
+
+    public void ResetMusicPitch(float duration)
+    {
+        StartCoroutine(LerpMusicPitch(1f, duration));
     }
 }

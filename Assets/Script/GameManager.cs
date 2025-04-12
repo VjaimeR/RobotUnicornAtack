@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         onGameStart?.Invoke();
+       
     }
 
     public void LoseGame()

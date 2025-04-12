@@ -17,7 +17,7 @@ AnimatorStateMachine:
     m_Position: {x: 613.9988, y: 36.77632, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1842474242924213477}
-    m_Position: {x: 640, y: 250, z: 0}
+    m_Position: {x: 640, y: 370, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -85,7 +85,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mini Simple Characters Armature|Loose
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 301225664089346657}
