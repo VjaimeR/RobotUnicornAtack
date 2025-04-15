@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-
-
 public class Dash : MonoBehaviour
 {
     [SerializeField]

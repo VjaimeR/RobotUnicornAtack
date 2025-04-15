@@ -1031,7 +1031,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c3a7d5ec37bb4cd46b2c954265258096, type: 3}
-    m_FontSize: 100
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ROBOT UNICORN ATACK
+  m_Text: Skull Scape
 --- !u!222 &721971301
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2018,7 +2018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1584541122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2697,6 +2697,10 @@ PrefabInstance:
     - target: {fileID: 2888763316790647435, guid: 5a114060ad517a24caf466a20c568a33, type: 3}
       propertyPath: m_Name
       value: WhiteFade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888763316790647435, guid: 5a114060ad517a24caf466a20c568a33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4917326215357098922, guid: 5a114060ad517a24caf466a20c568a33, type: 3}
       propertyPath: m_Pivot.x

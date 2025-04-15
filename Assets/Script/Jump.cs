@@ -22,7 +22,7 @@ public class Jump : MonoBehaviour
     private bool buttonPressed;
     private bool canJump = true;
     [SerializeField]
-private UnityEvent onLand;
+    public UnityEvent onLand;
 
 
     private void Start()
@@ -57,7 +57,7 @@ private UnityEvent onLand;
             jumpTimeCounter = maxJumpTime;
             rb.linearVelocity = Vector3.up * jumpForce;
             isGrounded = false;   
-            onLand?.Invoke();        
+            onLand?.Invoke();    
         }
     }
 
@@ -99,7 +99,6 @@ private UnityEvent onLand;
         {
             RestartJumps();
             isGrounded = true;
-            
         }        
     }
 }

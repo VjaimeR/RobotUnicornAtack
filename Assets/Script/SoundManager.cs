@@ -122,4 +122,8 @@ public class SoundManager : MonoBehaviour
     {
         StartCoroutine(LerpMusicPitch(1f, duration));
     }
+    /*
+    public void ChangeMusicPitch(float pitch){
+        musicS.pitch = pitch;
+    }*/
 }
