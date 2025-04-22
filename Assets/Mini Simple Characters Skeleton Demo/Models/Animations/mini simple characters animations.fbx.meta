@@ -39,7 +39,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Mini Simple Characters Armature|Idle
+      name: Idle
       takeName: Mini Simple Tribal Armature|Idle
       internalID: 4377859179230231196
       firstFrame: 0
@@ -68,11 +68,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Mini Simple Characters Armature|Jump
+      name: Jump
       takeName: Mini Simple Tribal Armature|Jump
       internalID: -4980162530228075440
       firstFrame: 0
-      lastFrame: 16
+      lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -97,7 +97,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Mini Simple Characters Armature|Loose
+      name: Loose
       takeName: Mini Simple Tribal Armature|Loose
       internalID: 1656708315764177654
       firstFrame: 0
@@ -126,7 +126,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Mini Simple Characters Armature|Run
+      name: Dash
       takeName: Mini Simple Tribal Armature|Run
       internalID: -6217389266773117732
       firstFrame: 0
@@ -155,7 +155,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Mini Simple Characters Armature|TPose
+      name: TPose
       takeName: Mini Simple Tribal Armature|TPose
       internalID: 5248203685024377522
       firstFrame: 0
@@ -184,7 +184,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Mini Simple Characters Armature|Walk
+      name: Wallk
       takeName: Mini Simple Tribal Armature|Walk
       internalID: 2075726249656104597
       firstFrame: 0
@@ -213,11 +213,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Mini Simple Character Armature|Fall
+      name: Fall
       takeName: Mini Simple Tribal Armature|Jump
       internalID: 4374490431865411343
       firstFrame: 15.1
-      lastFrame: 16.1
+      lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -242,10 +242,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Mini Simple Tribal Armature|Land
+      name: Land
       takeName: Mini Simple Tribal Armature|Jump
       internalID: -6168750945392006405
-      firstFrame: 27.5
+      firstFrame: 13
       lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0

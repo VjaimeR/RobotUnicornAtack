@@ -57,7 +57,6 @@ public class Jump : MonoBehaviour
             jumpTimeCounter = maxJumpTime;
             rb.linearVelocity = Vector3.up * jumpForce;
             isGrounded = false;   
-            onLand?.Invoke();    
         }
     }
 
@@ -99,6 +98,7 @@ public class Jump : MonoBehaviour
         {
             RestartJumps();
             isGrounded = true;
+            onLand?.Invoke();    
         }        
     }
 }
